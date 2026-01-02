@@ -21,13 +21,32 @@ const theme: CSSProperties = {
   "--sky": "#b7d1e8",
 };
 
+const pillars = [
+  {
+    title: "Grammar",
+    copy: "Catches small errors that make updates feel rushed.",
+  },
+  {
+    title: "Clarity",
+    copy: "Removes vague phrases so readers understand the action.",
+  },
+  {
+    title: "Tone",
+    copy: "Matches the voice you already use in past updates.",
+  },
+  {
+    title: "Structure",
+    copy: "Tightens long paragraphs into clean, readable beats.",
+  },
+];
+
 const steps = [
   {
     title: "Highlight a line",
-    copy: "Select the sentence you want to tighten or reframe.",
+    copy: "Select the sentence you want to adjust.",
   },
   {
-    title: "Choose a refinement",
+    title: "Pick a rewrite",
     copy: "Professional, Friendly, Shorter, or More Direct.",
   },
   {
@@ -36,33 +55,24 @@ const steps = [
   },
 ];
 
-const controls = [
+const safeguards = [
   "No auto edits while typing",
-  "Undo and restore any version",
   "Diff preview before apply",
-  "Clear history of changes",
+  "Undo and restore any version",
+  "No invented facts or promises",
 ];
 
-const useCases = [
-  "Product updates",
-  "Customer replies",
-  "Founder notes",
-  "Sales follow-ups",
-  "Status posts",
-  "Release notes",
-];
-
-export default function Home() {
+export default function ProductPage() {
   return (
     <div
       className={`${sora.className} min-h-screen bg-[color:var(--paper)] text-[color:var(--ink)]`}
       style={theme}
     >
       <div className="relative overflow-hidden">
-        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(29,28,22,0.05)_1px,transparent_1px),linear-gradient(180deg,rgba(29,28,22,0.05)_1px,transparent_1px)] bg-[size:28px_28px] opacity-40" />
-        <div className="pointer-events-none absolute -left-32 -top-40 h-[420px] w-[420px] rounded-full bg-[radial-gradient(circle_at_30%_30%,rgba(244,162,89,0.6),rgba(244,162,89,0))]" />
-        <div className="pointer-events-none absolute right-[-180px] top-10 h-[520px] w-[520px] rounded-full bg-[radial-gradient(circle_at_30%_30%,rgba(183,209,232,0.7),rgba(183,209,232,0))]" />
-        <div className="pointer-events-none absolute bottom-[-240px] left-1/3 h-[520px] w-[520px] rounded-full bg-[radial-gradient(circle_at_30%_30%,rgba(224,122,95,0.35),rgba(224,122,95,0))]" />
+        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(29,28,22,0.06)_1px,transparent_1px),linear-gradient(180deg,rgba(29,28,22,0.06)_1px,transparent_1px)] bg-[size:30px_30px] opacity-35" />
+        <div className="pointer-events-none absolute -left-32 -top-40 h-[420px] w-[420px] rounded-full bg-[radial-gradient(circle_at_30%_30%,rgba(244,162,89,0.55),rgba(244,162,89,0))]" />
+        <div className="pointer-events-none absolute right-[-180px] top-16 h-[520px] w-[520px] rounded-full bg-[radial-gradient(circle_at_30%_30%,rgba(183,209,232,0.65),rgba(183,209,232,0))]" />
+        <div className="pointer-events-none absolute bottom-[-240px] left-1/3 h-[520px] w-[520px] rounded-full bg-[radial-gradient(circle_at_30%_30%,rgba(47,122,99,0.35),rgba(47,122,99,0))]" />
 
         <div className="relative mx-auto flex min-h-screen max-w-6xl flex-col px-6 pb-24 pt-10 sm:px-10">
           <header className="flex items-center justify-between gap-4 md:grid md:grid-cols-[1fr_auto_1fr] md:items-center">
@@ -75,18 +85,15 @@ export default function Home() {
                   Sendable
                 </p>
                 <p className="text-[11px] uppercase tracking-[0.36em] text-[color:var(--mint)]">
-                  Home
+                  Product
                 </p>
               </div>
             </div>
             <nav className="hidden items-center gap-8 text-sm font-medium text-[color:var(--ink)]/70 md:flex md:justify-self-center">
-              <a className="text-[color:var(--ink)]" href="/">
+              <a className="transition hover:text-[color:var(--ink)]" href="/">
                 Home
               </a>
-              <a
-                className="transition hover:text-[color:var(--ink)]"
-                href="/product"
-              >
+              <a className="text-[color:var(--ink)]" href="/product">
                 Product
               </a>
               <a
@@ -97,9 +104,6 @@ export default function Home() {
               </a>
             </nav>
             <div className="flex items-center gap-3 md:justify-self-end">
-              <button className="hidden text-sm font-semibold text-[color:var(--ink)]/70 transition hover:text-[color:var(--ink)] sm:inline-flex">
-                Sign in
-              </button>
               <button className="rounded-full bg-[color:var(--ink)] px-5 py-2 text-sm font-semibold text-[color:var(--paper)] shadow-[0_16px_40px_-22px_rgba(29,28,22,0.7)] transition hover:-translate-y-0.5">
                 Open app
               </button>
@@ -109,38 +113,38 @@ export default function Home() {
           <section className="mt-16 grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
             <div>
               <div className="inline-flex items-center gap-2 rounded-full border border-[color:var(--ink)]/10 bg-white/70 px-3 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-[color:var(--ink)]/70">
-                Integrated AI refinement
+                Inline AI plugin
               </div>
               <h1
                 className={`${fraunces.className} mt-6 text-4xl leading-tight sm:text-5xl lg:text-6xl`}
               >
-                Write once.{" "}
+                Improve drafts{" "}
                 <span className="italic text-[color:var(--accent-2)]">
-                  Refine inline
+                  without leaving the editor
                 </span>
                 .
               </h1>
               <p className="mt-6 max-w-xl text-lg leading-8 text-[color:var(--ink)]/70">
-                Sendable is a lightweight plugin that lives inside your editor.
-                Highlight a line, choose a rewrite style, and apply the version
-                you like. No context switching.
+                Sendable adds a refinement loop inside your writing surface.
+                Highlight a line, choose a style, and apply only the version you
+                approve.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <button className="rounded-full bg-[color:var(--ink)] px-6 py-3 text-sm font-semibold text-[color:var(--paper)] shadow-[0_20px_50px_-30px_rgba(29,28,22,0.8)] transition hover:-translate-y-0.5">
                   Start a draft
                 </button>
                 <button className="rounded-full border border-[color:var(--ink)]/15 bg-white/70 px-6 py-3 text-sm font-semibold text-[color:var(--ink)] transition hover:border-[color:var(--ink)]/30">
-                  See how it works
+                  See the workflow
                 </button>
               </div>
             </div>
 
             <div className="relative">
-              <div className="rounded-3xl border border-[color:var(--ink)]/10 bg-white/80 p-6 shadow-[0_30px_80px_-40px_rgba(29,28,22,0.35)] backdrop-blur">
+              <div className="rounded-3xl border border-[color:var(--ink)]/10 bg-white/85 p-6 shadow-[0_30px_80px_-40px_rgba(29,28,22,0.35)] backdrop-blur">
                 <div className="flex items-center justify-between">
-                  <p className="text-sm font-semibold">Inline co-writer</p>
+                  <p className="text-sm font-semibold">Refinement panel</p>
                   <span className="rounded-full bg-[color:var(--mint)]/10 px-3 py-1 text-xs font-semibold text-[color:var(--mint)]">
-                    Refine text
+                    Preview only
                   </span>
                 </div>
                 <div className="mt-6 space-y-4 text-sm text-[color:var(--ink)]/80">
@@ -149,106 +153,118 @@ export default function Home() {
                     <span className="rounded bg-[color:var(--accent)]/25 px-1 font-semibold">
                       kind of
                     </span>{" "}
-                    excited to share the new onboarding flow with early teams.
+                    excited to share the new onboarding flow.
                   </div>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 text-xs font-semibold">
                     {["Professional", "Friendly", "Shorter", "More direct"].map(
-                      (label) => (
+                      (mode) => (
                         <span
-                          key={label}
-                          className="rounded-full border border-[color:var(--ink)]/10 bg-white px-3 py-1 text-xs font-semibold"
+                          key={mode}
+                          className="rounded-full border border-[color:var(--ink)]/10 bg-white px-3 py-1"
                         >
-                          {label}
+                          {mode}
                         </span>
                       )
                     )}
                   </div>
                   <div className="rounded-2xl border border-[color:var(--mint)]/25 bg-[color:var(--mint)]/10 px-4 py-3">
-                    Suggested: We are excited to share the new onboarding flow
-                    with early teams.
+                    Suggested: We are excited to share the new onboarding flow.
                   </div>
                 </div>
                 <div className="mt-6 flex items-center justify-between text-xs text-[color:var(--ink)]/60">
-                  <span>Preview before apply</span>
+                  <span>Diff preview</span>
                   <span>Undo ready</span>
                 </div>
               </div>
 
-              <div className="absolute -bottom-12 right-6 w-64 rounded-2xl border border-[color:var(--ink)]/10 bg-white/90 p-4 text-sm shadow-[0_20px_60px_-40px_rgba(29,28,22,0.4)]">
-                <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--mint)]">
-                  Context aware
+              <div className="absolute -bottom-10 right-6 w-64 rounded-2xl border border-[color:var(--ink)]/10 bg-white/95 p-4 text-sm shadow-[0_20px_60px_-40px_rgba(29,28,22,0.4)]">
+                <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--accent-2)]">
+                  Sendability score
                 </p>
-                <p className="mt-2 font-semibold">Matches your past tone</p>
+                <p className="mt-2 font-semibold">86 / 100</p>
                 <p className="mt-2 text-[color:var(--ink)]/70">
-                  Uses your existing drafts to keep phrasing consistent.
+                  Tone and clarity are strong. Structure can be tighter.
                 </p>
               </div>
             </div>
           </section>
 
-          <section className="mt-20 grid gap-6 lg:grid-cols-3">
-            {steps.map((step, index) => (
+          <section className="mt-20 grid gap-6 lg:grid-cols-4">
+            {pillars.map((pillar) => (
               <div
-                key={step.title}
-                className="flex h-full flex-col gap-4 rounded-3xl border border-[color:var(--ink)]/10 bg-white/75 p-6 shadow-[0_20px_50px_-40px_rgba(29,28,22,0.35)]"
+                key={pillar.title}
+                className="flex h-full flex-col justify-between rounded-3xl border border-[color:var(--ink)]/10 bg-white/75 p-6 shadow-[0_20px_50px_-40px_rgba(29,28,22,0.35)]"
               >
-                <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--mint)]">
-                  Step 0{index + 1}
-                </p>
-                <p className="text-lg font-semibold">{step.title}</p>
-                <p className="text-sm leading-7 text-[color:var(--ink)]/70">
-                  {step.copy}
+                <div>
+                  <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--mint)]">
+                    {pillar.title}
+                  </p>
+                  <p className="mt-3 text-base leading-7 text-[color:var(--ink)]/70">
+                    {pillar.copy}
+                  </p>
+                </div>
+                <p className="mt-6 text-sm font-semibold text-[color:var(--ink)]">
+                  Sendability checks
                 </p>
               </div>
             ))}
           </section>
 
-          <section className="mt-20 grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
-            <div className="rounded-3xl border border-[color:var(--ink)]/10 bg-white/80 p-8 shadow-[0_30px_80px_-50px_rgba(29,28,22,0.35)]">
+          <section className="mt-24 grid gap-10 lg:grid-cols-[1fr_1.1fr]">
+            <div>
               <p className="text-xs uppercase tracking-[0.4em] text-[color:var(--ink)]/60">
-                Built for control
+                How it works
               </p>
               <h2
-                className={`${fraunces.className} mt-4 text-3xl leading-tight`}
+                className={`${fraunces.className} mt-4 text-3xl leading-tight sm:text-4xl`}
               >
-                Refinements stay optional.
+                A simple refinement loop.
               </h2>
               <p className="mt-4 text-base leading-7 text-[color:var(--ink)]/70">
-                The plugin never edits your draft automatically. Every change is
-                previewed, reversible, and stored in history.
+                Scan your draft, request an improvement, and apply the version
+                you prefer. Nothing changes until you approve it.
+              </p>
+              <div className="mt-8 space-y-6 text-sm">
+                {steps.map((item, index) => (
+                  <div
+                    key={item.title}
+                    className="flex items-start gap-4 rounded-2xl border border-[color:var(--ink)]/10 bg-white/70 p-4"
+                  >
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[color:var(--ink)] text-sm font-semibold text-[color:var(--paper)]">
+                      0{index + 1}
+                    </div>
+                    <div>
+                      <p className="text-sm font-semibold">{item.title}</p>
+                      <p className="mt-1 text-[color:var(--ink)]/70">
+                        {item.copy}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="rounded-3xl border border-[color:var(--ink)]/10 bg-white/85 p-8 shadow-[0_30px_80px_-50px_rgba(29,28,22,0.35)]">
+              <p className="text-xs uppercase tracking-[0.4em] text-[color:var(--ink)]/60">
+                Safeguards
+              </p>
+              <h3
+                className={`${fraunces.className} mt-4 text-3xl leading-tight`}
+              >
+                Control stays with you.
+              </h3>
+              <p className="mt-4 text-base leading-7 text-[color:var(--ink)]/70">
+                Sendable keeps drafts stable, stores every change, and makes
+                undo instant.
               </p>
               <div className="mt-6 grid gap-3 text-sm text-[color:var(--ink)]/70">
-                {controls.map((item) => (
+                {safeguards.map((item) => (
                   <div
                     key={item}
                     className="rounded-2xl border border-[color:var(--ink)]/10 bg-white px-4 py-3"
                   >
                     {item}
                   </div>
-                ))}
-              </div>
-            </div>
-            <div className="rounded-3xl border border-[color:var(--ink)]/10 bg-[linear-gradient(140deg,rgba(224,122,95,0.18),rgba(246,242,234,0.9)_60%,rgba(183,209,232,0.25))] p-8 shadow-[0_30px_80px_-50px_rgba(29,28,22,0.35)]">
-              <p className="text-xs uppercase tracking-[0.4em] text-[color:var(--ink)]/60">
-                Works anywhere
-              </p>
-              <h2
-                className={`${fraunces.className} mt-4 text-3xl leading-tight`}
-              >
-                For high-stakes messages.
-              </h2>
-              <p className="mt-4 text-base leading-7 text-[color:var(--ink)]/70">
-                Use Sendable when the words have to be clean, calm, and ready to
-                send.
-              </p>
-              <div className="mt-6 flex flex-wrap gap-2 text-xs font-semibold text-[color:var(--ink)]/70">
-                {useCases.map((item) => (
-                  <span
-                    key={item}
-                    className="rounded-full border border-[color:var(--ink)]/10 bg-white/70 px-3 py-2"
-                  >
-                    {item}
-                  </span>
                 ))}
               </div>
             </div>
@@ -263,11 +279,11 @@ export default function Home() {
                 <h3
                   className={`${fraunces.className} mt-3 text-3xl leading-tight`}
                 >
-                  Start your first inline refinement.
+                  Run your first sendability scan.
                 </h3>
                 <p className="mt-3 max-w-xl text-sm text-[color:var(--ink)]/70">
-                  Paste a message, refine a line, and approve the version that
-                  feels right.
+                  Paste a message, preview the rewrite, and apply when it feels
+                  right.
                 </p>
               </div>
               <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
@@ -275,26 +291,26 @@ export default function Home() {
                   Open app
                 </button>
                 <button className="rounded-full border border-[color:var(--ink)]/20 bg-white/70 px-6 py-3 text-sm font-semibold text-[color:var(--ink)]">
-                  View product
+                  View pricing
                 </button>
               </div>
             </div>
           </section>
 
           <footer className="mt-16 flex flex-col items-start justify-between gap-6 border-t border-[color:var(--ink)]/10 pt-8 text-sm text-[color:var(--ink)]/70 md:flex-row md:items-center">
-            <p>Sendable helps teams refine messages inline.</p>
+            <p>Sendable product overview.</p>
             <div className="flex flex-wrap gap-4 text-sm font-medium">
-              <a className="transition hover:text-[color:var(--ink)]" href="#">
-                Security
+              <a className="transition hover:text-[color:var(--ink)]" href="/">
+                Home
+              </a>
+              <a
+                className="transition hover:text-[color:var(--ink)]"
+                href="/product"
+              >
+                Product
               </a>
               <a className="transition hover:text-[color:var(--ink)]" href="#">
-                Status
-              </a>
-              <a className="transition hover:text-[color:var(--ink)]" href="#">
-                Careers
-              </a>
-              <a className="transition hover:text-[color:var(--ink)]" href="#">
-                Contact
+                Privacy
               </a>
             </div>
           </footer>
