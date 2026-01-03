@@ -1,26 +1,72 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --paper: #0b0f14;
+  --paper-soft: rgba(11, 15, 20, 0.9);
+  --ink: #f6f2ea;
+  --accent: #d88a4a;
+  --accent-ink: var(--paper);
+  --accent-2: #ff9b7d;
+  --mint: #7fd6b5;
+  --sky: #9dc8eb;
+  --surface: #141b23;
+  --surface-95: rgba(20, 27, 35, 0.95);
+  --surface-90: rgba(20, 27, 35, 0.9);
+  --surface-85: rgba(20, 27, 35, 0.85);
+  --surface-80: rgba(20, 27, 35, 0.8);
+  --surface-75: rgba(20, 27, 35, 0.75);
+  --surface-70: rgba(20, 27, 35, 0.7);
+  --grid-line: rgba(246, 242, 234, 0.08);
+  --glow-amber: rgba(216, 138, 74, 0.55);
+  --glow-amber-soft: rgba(216, 138, 74, 0.2);
+  --glow-coral: rgba(255, 155, 125, 0.35);
+  --glow-coral-soft: rgba(255, 155, 125, 0.2);
+  --glow-sky: rgba(157, 200, 235, 0.35);
+  --glow-sky-soft: rgba(157, 200, 235, 0.22);
+  --glow-mint: rgba(127, 214, 181, 0.35);
+  --glow-mint-soft: rgba(127, 214, 181, 0.2);
+  --background: var(--paper);
+  --foreground: var(--ink);
+}
+
+:root[data-theme="light"] {
+  --paper: #f6f2ea;
+  --paper-soft: rgba(246, 242, 234, 0.9);
+  --ink: #1d1c16;
+  --accent: #f4a259;
+  --accent-ink: var(--ink);
+  --accent-2: #e07a5f;
+  --mint: #2f7a63;
+  --sky: #b7d1e8;
+  --surface: #ffffff;
+  --surface-95: rgba(255, 255, 255, 0.95);
+  --surface-90: rgba(255, 255, 255, 0.9);
+  --surface-85: rgba(255, 255, 255, 0.85);
+  --surface-80: rgba(255, 255, 255, 0.8);
+  --surface-75: rgba(255, 255, 255, 0.75);
+  --surface-70: rgba(255, 255, 255, 0.7);
+  --grid-line: rgba(29, 28, 22, 0.06);
+  --glow-amber: rgba(244, 162, 89, 0.6);
+  --glow-amber-soft: rgba(244, 162, 89, 0.18);
+  --glow-coral: rgba(224, 122, 95, 0.35);
+  --glow-coral-soft: rgba(224, 122, 95, 0.18);
+  --glow-sky: rgba(183, 209, 232, 0.7);
+  --glow-sky-soft: rgba(183, 209, 232, 0.25);
+  --glow-mint: rgba(47, 122, 99, 0.35);
+  --glow-mint-soft: rgba(47, 122, 99, 0.18);
+  --background: var(--paper);
+  --foreground: var(--ink);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-background: var(--paper);
+  --color-foreground: var(--ink);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--paper);
+  color: var(--ink);
   font-family: Arial, Helvetica, sans-serif;
 }
